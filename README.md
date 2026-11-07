@@ -1,4 +1,4 @@
-# 🚀 BadVPN Pro Max (Rust Edition)
+# 🚀 BadVPN Pro (Rust Edition)
 
 Uma reescrita completa e otimizada do gateway `badvpn-udpgw` utilizando a linguagem **Rust** e o motor assíncrono **Tokio**. Ideal para servidores de alta demanda (túneis SSH, jogos online, chamadas de vídeo), superando as limitações do código original em C.
 
@@ -12,4 +12,4 @@ Uma reescrita completa e otimizada do gateway `badvpn-udpgw` utilizando a lingua
 Execute o comando abaixo como `root` no seu VPS:
 
 ```bash
-wget -O install.sh [https://raw.githubusercontent.com/PhoenixxZ2023/badvpn-promax/main/install.sh](https://raw.githubusercontent.com/PhoenixxZ2023/badvpn-promax/main/install.sh) && chmod +x install.sh && ./install.sh
+wget -O install.sh [https://raw.githubusercontent.com/PhoenixxZ2023/badvpnpro/main/install.sh](https://raw.githubusercontent.com/PhoenixxZ2023/badvpnpro/main/install.sh) && chmod +x install.sh && ./install.sh
