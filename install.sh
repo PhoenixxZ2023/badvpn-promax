@@ -28,8 +28,9 @@ if [[ -f "/root/menu.sh" ]]; then
     chmod +x /root/menu.sh
     echo -e "${VERDE}✔ DOWNLOAD CONCLUÍDO!${RESET}"
     
-    echo "/root/menu.sh" > /usr/local/bin/menu
-    chmod +x /usr/local/bin/menu
+    # Cria o atalho com o comando badvpnpro
+    echo "/root/menu.sh" > /usr/local/bin/badvpnpro
+    chmod +x /usr/local/bin/badvpnpro
 
     echo -e "${BRANCO}INICIANDO O SISTEMA...${RESET}"
     sleep 2
