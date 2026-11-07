@@ -1,5 +1,5 @@
 #!/bin/bash
-# INSTALADOR BADVPN PRO MAX (RUST EDITION)
+# INSTALADOR BADVPN PRO (RUST EDITION)
 
 # CORES COM NEGRITO FORÇADO
 ROJO="\e[1;31m"
@@ -10,7 +10,7 @@ RESET="\e[0m"
 
 clear
 echo -e "${VERDE}==============================================${RESET}"
-echo -e "${BRANCO}   INICIANDO SETUP DO BADVPN PRO MAX (RUST)${RESET}"
+echo -e "${BRANCO}      INICIANDO SETUP DO BADVPN PRO (RUST)${RESET}"
 echo -e "${VERDE}==============================================${RESET}"
 echo ""
 
@@ -22,14 +22,12 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 echo -e "${AMARILLO}BAIXANDO O MENU DE GERENCIAMENTO DO GITHUB...${RESET}"
-# Baixa o menu oficial do seu repositório direto para a pasta do root
-wget -q -O /root/menu.sh https://raw.githubusercontent.com/PhoenixxZ2023/badvpn-promax/main/menu.sh
+wget -q -O /root/menu.sh https://raw.githubusercontent.com/PhoenixxZ2023/badvpnpro/main/menu.sh
 
 if [[ -f "/root/menu.sh" ]]; then
     chmod +x /root/menu.sh
     echo -e "${VERDE}✔ DOWNLOAD CONCLUÍDO!${RESET}"
     
-    # Cria um atalho prático para o usuário abrir o menu digitando apenas "menu" no terminal
     echo "/root/menu.sh" > /usr/local/bin/menu
     chmod +x /usr/local/bin/menu
 
