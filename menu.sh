@@ -1,8 +1,8 @@
 #!/bin/bash
-# BADVPN PRO (RUST EDITION)
+# BADVPN PRO MAX (RUST EDITION)
 # TODO EM UM: INSTALAÇÃO, GESTÃO, TURBO, OTIMIZAÇÃO UDP E DASHBOARD
 
-REPO_URL="https://github.com/PhoenixxZ2023/badvpnpro"
+REPO_URL="https://github.com/PhoenixxZ2023/badvpn-promax.git"
 SERVICE_DIR="/etc/systemd/system"
 BIN="/usr/bin/badvpn-udpgw"
 LOG="/var/log/badvpn.log"
@@ -23,6 +23,7 @@ function banner() {
     clear
     echo -e "${MORADO}==============================================${RESET}"
     echo -e "${VERDE}       BADVPN PRO (RUST) – MENU ${RESET}"
+    echo -e "${AZUL}           TELEGRAM: @TURBONET2023${RESET}"
     echo -e "${MORADO}==============================================${RESET}"
 }
 
@@ -45,9 +46,9 @@ function install_badvpn() {
 
     echo -e "${AMARILLO}3/4 BAIXANDO E COMPILANDO BADVPN PRO (PODE DEMORAR UNS MINUTOS)...${RESET}"
     cd /opt
-    rm -rf badvpnpro
+    rm -rf badvpn-promax
     git clone $REPO_URL >/dev/null 2>&1
-    cd badvpnpro
+    cd badvpn-promax
     cargo build --release >/dev/null 2>&1
     cp target/release/badvpn-udpgw $BIN
     chmod +x $BIN
