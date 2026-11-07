@@ -1,0 +1,60 @@
+name: Release
+
+# Builds static musl binaries for x86_64 and aarch64 — each one NATIVELY on a runner of that
+# architecture, so the test suite runs on the same arch that ships — and attaches them to the
+# GitHub release. Runs on every `v*` tag; can also be run by hand for an existing tag.
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Existing release tag to build for and attach binaries to (e.g. v0.1.0)"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: ${{ matrix.arch }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            arch: x86_64
+            target: x86_64-unknown-linux-musl
+          - os: ubuntu-24.04-arm
+            arch: aarch64
+            target: aarch64-unknown-linux-musl
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.tag || github.ref }}
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.target }}
+      - run: sudo apt-get update && sudo apt-get install -y musl-tools
+      # The tests run against the musl build, natively on this runner's architecture.
+      - run: cargo test --release --target ${{ matrix.target }}
+      - run: cargo build --release --target ${{ matrix.target }}
+      - name: Package
+        id: pkg
+        run: |
+          TAG="${{ inputs.tag || github.ref_name }}"
+          NAME="badvpn-udpgw-${TAG}-${{ matrix.arch }}-linux-musl"
+          mkdir -p "dist/$NAME"
+          cp "target/${{ matrix.target }}/release/badvpn-udpgw" "dist/$NAME/"
+          cp README.md LICENSE contrib/badvpn-udpgw.service "dist/$NAME/"
+          tar -C dist -czf "dist/$NAME.tar.gz" "$NAME"
+          (cd dist && sha256sum "$NAME.tar.gz" > "$NAME.tar.gz.sha256")
+          file "dist/$NAME/badvpn-udpgw"
+          echo "name=$NAME" >> "$GITHUB_OUTPUT"
+      - uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ inputs.tag || github.ref_name }}
+          files: |
+            dist/${{ steps.pkg.outputs.name }}.tar.gz
+            dist/${{ steps.pkg.outputs.name }}.tar.gz.sha256
