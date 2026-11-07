@@ -16,4 +16,4 @@ wget -O install.sh [https://raw.githubusercontent.com/PhoenixxZ2023/badvpnpro/ma
 ````
 
 ````bash
-wget -O install.sh https://raw.githubusercontent.com/PhoenixxZ2023/badvpnpro/main/install.sh && && chmod +x install.sh && ./install.sh
+wget -O install.sh https://raw.githubusercontent.com/PhoenixxZ2023/badvpnpro/main/install.sh 
