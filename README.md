@@ -12,7 +12,7 @@ Uma reescrita completa e otimizada do gateway `badvpn-udpgw` utilizando a lingua
 Execute o comando abaixo como `root` no seu VPS:
 
 ````
-bash <(wget -qO- https://raw.githubusercontent.com/PhoenixxZ2023/badvpnpro/master/install.sh)
+bash <(wget -O- https://raw.githubusercontent.com/PhoenixxZ2023/badvpnpro/master/install.sh)
 ````
 
 ````bash
