@@ -1,16 +1,19 @@
 #!/bin/bash
 # INSTALADOR BADVPN PRO (RUST EDITION)
+# DESENVOLVEDOR: @TURBONET2023
 
 # CORES COM NEGRITO FORÇADO
 ROJO="\e[1;31m"
 VERDE="\e[1;32m"
 AMARILLO="\e[1;33m"
+AZUL="\e[1;34m"
 BRANCO="\e[1;37m"
 RESET="\e[0m"
 
 clear
 echo -e "${VERDE}==============================================${RESET}"
 echo -e "${BRANCO}      INICIANDO SETUP DO BADVPN PRO (RUST)${RESET}"
+echo -e "${AZUL}             TELEGRAM: @TURBONET2023${RESET}"
 echo -e "${VERDE}==============================================${RESET}"
 echo ""
 
@@ -36,5 +39,5 @@ if [[ -f "/root/menu.sh" ]]; then
     sleep 2
     /root/menu.sh
 else
-    echo -e "${ROJO}ERRO AO BAIXAR O SCRIPT! VERIFIQUE SE O REPOSITÓRIO ESTÁ PÚBLICO E SE O LINK ESTÁ CORRETO.${RESET}"
+    echo -e "${ROJO}ERRO AO BAIXAR O SCRIPT! VERIFIQUE SE O REPOSITÓRIO ESTÁ PÚBLICO.${RESET}"
 fi
