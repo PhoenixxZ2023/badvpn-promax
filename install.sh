@@ -22,7 +22,7 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 echo -e "${AMARILLO}BAIXANDO O MENU DE GERENCIAMENTO DO GITHUB...${RESET}"
-wget -q -O /root/menu.sh https://raw.githubusercontent.com/PhoenixxZ2023/badvpnpro/main/menu.sh
+wget -q -O /root/menu.sh https://raw.githubusercontent.com/PhoenixxZ2023/badvpnpro/master/menu.sh
 
 if [[ -f "/root/menu.sh" ]]; then
     chmod +x /root/menu.sh
