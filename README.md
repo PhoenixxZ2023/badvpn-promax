@@ -16,4 +16,4 @@ bash <(wget -O- https://raw.githubusercontent.com/PhoenixxZ2023/badvpn-promax/ma
 ````
 
 ````bash
-wget -O install.sh https://raw.githubusercontent.com/PhoenixxZ2023/badvpn-promax/main/install.sh 
+wget -O install.sh https://raw.githubusercontent.com/PhoenixxZ2023/badvpn-promax/master/install.sh 
