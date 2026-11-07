@@ -9,7 +9,7 @@ Uma reescrita completa e otimizada do gateway `badvpn-udpgw` utilizando a lingua
 - **Evicção Inteligente (LRU):** Proteção automática contra sobrecarga de conexões por cliente.
 
 ## ⚙️ Instalação Rápida
-Execute o comando abaixo como `root` no seu VPS (Ubuntu 20.04/22.04/24.04 ou Debian 11/12):
+Execute o comando abaixo como `root` no seu VPS:
 
 ```bash
-wget -O menu.sh [https://raw.githubusercontent.com/PhoenixxZ2023/badvpn-promax/main/menu.sh](https://raw.githubusercontent.com/PhoenixxZ2023/badvpn-promax/main/menu.sh) && chmod +x menu.sh && ./menu.sh
+wget -O install.sh [https://raw.githubusercontent.com/PhoenixxZ2023/badvpn-promax/main/install.sh](https://raw.githubusercontent.com/PhoenixxZ2023/badvpn-promax/main/install.sh) && chmod +x install.sh && ./install.sh
