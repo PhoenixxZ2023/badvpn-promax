@@ -2,7 +2,7 @@
 # BADVPN PRO (RUST EDITION)
 # TODO EM UM: INSTALAÇÃO, GESTÃO, TURBO, OTIMIZAÇÃO UDP E DASHBOARD
 
-REPO_URL="https://github.com/PhoenixxZ2023/badvpnpro.git"
+REPO_URL="https://github.com/PhoenixxZ2023/badvpnpro"
 SERVICE_DIR="/etc/systemd/system"
 BIN="/usr/bin/badvpn-udpgw"
 LOG="/var/log/badvpn.log"
