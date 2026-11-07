@@ -1,8 +1,8 @@
 #!/bin/bash
-# BADVPN PRO MAX (RUST EDITION)
+# BADVPN PRO (RUST EDITION)
 # TODO EM UM: INSTALAÇÃO, GESTÃO, TURBO, OTIMIZAÇÃO UDP E DASHBOARD
 
-REPO_URL="https://github.com/PhoenixxZ2023/badvpn-promax.git"
+REPO_URL="https://github.com/PhoenixxZ2023/badvpnpro.git"
 SERVICE_DIR="/etc/systemd/system"
 BIN="/usr/bin/badvpn-udpgw"
 LOG="/var/log/badvpn.log"
@@ -22,7 +22,7 @@ function log() { echo -e "[$(date '+%Y-%m-%d %H:%M:%S')] $1" >> $LOG; }
 function banner() {
     clear
     echo -e "${MORADO}==============================================${RESET}"
-    echo -e "${VERDE}     BADVPN PRO MAX (RUST) – MENU ${RESET}"
+    echo -e "${VERDE}       BADVPN PRO (RUST) – MENU ${RESET}"
     echo -e "${MORADO}==============================================${RESET}"
 }
 
@@ -43,11 +43,11 @@ function install_badvpn() {
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y >/dev/null 2>&1
     source "$HOME/.cargo/env"
 
-    echo -e "${AMARILLO}3/4 BAIXANDO E COMPILANDO BADVPN PRO MAX (PODE DEMORAR UNS MINUTOS)...${RESET}"
+    echo -e "${AMARILLO}3/4 BAIXANDO E COMPILANDO BADVPN PRO (PODE DEMORAR UNS MINUTOS)...${RESET}"
     cd /opt
-    rm -rf badvpn-promax
+    rm -rf badvpnpro
     git clone $REPO_URL >/dev/null 2>&1
-    cd badvpn-promax
+    cd badvpnpro
     cargo build --release >/dev/null 2>&1
     cp target/release/badvpn-udpgw $BIN
     chmod +x $BIN
@@ -56,7 +56,7 @@ function install_badvpn() {
     cp dashboard.py $DASHBOARD
     chmod +x $DASHBOARD
 
-    echo -e "${VERDE}✔ INSTALAÇÃO DO BADVPN PRO MAX (RUST) CONCLUÍDA COM SUCESSO!${RESET}"
+    echo -e "${VERDE}✔ INSTALAÇÃO DO BADVPN PRO CONCLUÍDA COM SUCESSO!${RESET}"
     log "BADVPN RUST INSTALADO VIA PHOENIXXZ2023"
 }
 
