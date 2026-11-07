@@ -12,8 +12,8 @@ Uma reescrita completa e otimizada do gateway `badvpn-udpgw` utilizando a lingua
 Execute o comando abaixo como `root` no seu VPS:
 
 ````
-bash <(wget -O- https://raw.githubusercontent.com/PhoenixxZ2023/badvpnpro/master/install.sh)
+bash <(wget -O- https://raw.githubusercontent.com/PhoenixxZ2023/badvpn-promax/master/install.sh)
 ````
 
 ````bash
-wget -O install.sh https://raw.githubusercontent.com/PhoenixxZ2023/badvpnpro/main/install.sh 
+wget -O install.sh https://raw.githubusercontent.com/PhoenixxZ2023/badvpn-promax/main/install.sh 
