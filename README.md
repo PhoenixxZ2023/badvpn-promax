@@ -13,3 +13,7 @@ Execute o comando abaixo como `root` no seu VPS:
 
 ```bash
 wget -O install.sh [https://raw.githubusercontent.com/PhoenixxZ2023/badvpnpro/main/install.sh](https://raw.githubusercontent.com/PhoenixxZ2023/badvpnpro/main/install.sh) && chmod +x install.sh && ./install.sh
+
+````
+wget -O install.sh https://raw.githubusercontent.com/PhoenixxZ2023/badvpnpro/main/install.sh && bash install.sh
+````
