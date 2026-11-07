@@ -25,19 +25,20 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 echo -e "${AMARILLO}BAIXANDO O MENU DE GERENCIAMENTO DO GITHUB...${RESET}"
-wget -q -O /root/menu.sh https://raw.githubusercontent.com/PhoenixxZ2023/badvpnpro/master/install.sh
+# CORREÇÃO: Nome do repositório (badvpn-promax) e nome do arquivo (menu.sh)
+wget -q -O /root/menu.sh https://raw.githubusercontent.com/PhoenixxZ2023/badvpn-promax/master/menu.sh
 
 if [[ -f "/root/menu.sh" ]]; then
     chmod +x /root/menu.sh
     echo -e "${VERDE}✔ DOWNLOAD CONCLUÍDO!${RESET}"
     
-    # Cria o atalho com o comando badvpnpro
-    echo "/root/menu.sh" > /usr/local/bin/badvpnpro
+    # Cria o atalho com o comando badvpnpro de forma segura
+    echo -e '#!/bin/bash\n/root/menu.sh' > /usr/local/bin/badvpnpro
     chmod +x /usr/local/bin/badvpnpro
 
     echo -e "${BRANCO}INICIANDO O SISTEMA...${RESET}"
     sleep 2
-    /root/menu.sh
+    badvpnpro
 else
-    echo -e "${ROJO}ERRO AO BAIXAR O SCRIPT! VERIFIQUE SE O REPOSITÓRIO ESTÁ PÚBLICO.${RESET}"
+    echo -e "${ROJO}ERRO AO BAIXAR O SCRIPT! VERIFIQUE SE O REPOSITÓRIO ESTÁ PÚBLICO E O NOME DO ARQUIVO.${RESET}"
 fi
